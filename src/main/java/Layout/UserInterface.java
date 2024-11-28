@@ -5,10 +5,10 @@ import javafx.scene.control.Label;
 
 public class UserInterface {
     @FXML
-    private Label welcomeText;
+    private Label welcomeLabel; // Add this field to reference the label you want to modify
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    public void onButtonClick() {
+        welcomeLabel.setText("Hello, Login Successful!");
     }
 }
