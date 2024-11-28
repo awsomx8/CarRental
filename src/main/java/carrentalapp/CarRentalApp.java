@@ -1,5 +1,6 @@
 package carrentalapp;
 
+import Database.DatabaseInitializer;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -18,6 +19,7 @@ public class CarRentalApp extends Application {
     }
 
     public static void main(String[] args) {
+        DatabaseInitializer.initialize();
         launch();
     }
 }
