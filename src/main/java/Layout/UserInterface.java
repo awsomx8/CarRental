@@ -1,4 +1,4 @@
-package carrentalapp;
+package Layout;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

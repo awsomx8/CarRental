@@ -9,4 +9,6 @@ module com.example.carrentalapp {
     exports carrentalapp;
     exports Logic;
     opens Logic to javafx.fxml;
+    exports Layout;
+    opens Layout to javafx.fxml;
 }
