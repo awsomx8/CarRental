@@ -3,8 +3,6 @@ package Database;
 import Logic.Car;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class CarDAO {
     private static final String JDBC_URL = "jdbc:h2:.data/rental_app";
@@ -16,17 +14,18 @@ public class CarDAO {
                 """;
 
         try (Connection conn = DriverManager.getConnection(JDBC_URL, "sa", "");
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, car.getMake());
-            pstmt.setString(2, car.getModel());
-            pstmt.setString(3, car.getCarCategory().toString());
-            pstmt.setString(4, car.getCarStatus().toString());
-            pstmt.setInt(5, car.getYearOfProduction());
-            pstmt.setInt(6, car.getMileage());
-            pstmt.setString(7, car.getTransmission().toString());
-            pstmt.setInt(8, car.getHorsePower());
-            pstmt.setDouble(9, car.getDailyRate());
-            pstmt.executeUpdate();
+             PreparedStatement preparedStatement = conn.prepareStatement(sql)) {
+            preparedStatement.setInt(1, car.getID());
+            preparedStatement.setString(2, car.getMake());
+            preparedStatement.setString(3, car.getModel());
+            preparedStatement.setString(4, car.getCarCategory().toString());
+            preparedStatement.setString(5, car.getCarStatus().toString());
+            preparedStatement.setInt(6, car.getYearOfProduction());
+            preparedStatement.setInt(7, car.getMileage());
+            preparedStatement.setString(8, car.getTransmission().toString());
+            preparedStatement.setInt(9, car.getHorsePower());
+            preparedStatement.setDouble(10, car.getDailyRate());
+            preparedStatement.executeUpdate();
         } catch (SQLException e) {
             System.out.println();
         }
