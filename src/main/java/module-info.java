@@ -5,6 +5,8 @@ module com.example.carrentalapp {
     requires org.controlsfx.controls;
     requires org.kordamp.ikonli.javafx;
 
-    opens com.example.carrentalapp to javafx.fxml;
-    exports com.example.carrentalapp;
+    opens carrentalapp to javafx.fxml;
+    exports carrentalapp;
+    exports Logic;
+    opens Logic to javafx.fxml;
 }

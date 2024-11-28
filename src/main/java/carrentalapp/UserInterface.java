@@ -1,9 +1,9 @@
-package com.example.carrentalapp;
+package carrentalapp;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class HelloController {
+public class UserInterface {
     @FXML
     private Label welcomeText;
 
