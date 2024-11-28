@@ -40,6 +40,18 @@ public class DatabaseInitializer {
                     """;
             statement.execute(createCustomersTable);
 
+            String createBillingsTable = """
+                    CREATE TABLE IF NOT EXISTS billings (
+                    id INT AUTO_INCREMENT PRIMARY KEY
+                    monthly_rate DOUBLE,
+                    car_id INT,
+                    payments_left_total DOUBLE,
+                    months_left INT,
+                    FOREIGN KEY (car_id) REFERENCES cars(id)
+                    )
+                    """;
+            statement.execute(createBillingsTable);
+
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
