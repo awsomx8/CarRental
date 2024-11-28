@@ -1,6 +1,11 @@
 package carrentalapp;
 
+import Database.CarDAO;
 import Database.DatabaseInitializer;
+import Logic.Car;
+import Logic.CarStatus;
+import Logic.CarCategory;
+import Logic.Transmission;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -19,7 +24,12 @@ public class CarRentalApp extends Application {
     }
 
     public static void main(String[] args) {
+        Car car = new Car(0,"Skoda", "Superb", CarCategory.FAMILY, 2014, 108000, Transmission.MANUAL, 222, 36);
+        CarDAO carDAO = new CarDAO();
+        carDAO.addCar(car);
         DatabaseInitializer.initialize();
+        DatabaseInitializer.testDatabase();
         launch();
     }
+
 }
